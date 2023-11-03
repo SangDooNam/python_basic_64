@@ -3,14 +3,26 @@ from tv import TV
 
  # Let's make a TV party!!
 
-class TVParty:
+class TVParty(TV):
 
     def __init__(self):
         # TODO: Instantiate the TV object
-        tv = None
+        self.channel = 1
+        self.volume_level = 1
+        self.turned_on = False
+        
 
         # TODO: Your first code goes here
-
+        tv = TV()
+        tv.turn_on()
+        tv.set_channel(3)
+        tv.volume_up()
+        tv.volume_up()
+        tv.volume_up()
+        tv.volume_up()
+        tv.volume_up()
+        tv.volume_up()
+        
         print(
             "Let's watch the Alien Movie. The TV is currently [" + tv.is_on() + "] and it should be [on]."
             + " It's being shown on channel [3], and we're currently on channel [" + str(tv.channel) + "]. "
@@ -19,10 +31,15 @@ class TVParty:
         )
 
         # TODO: Food break! turn the tv off.
+        tv.turn_off()
 
         print("Food break! The TV should be [off], and it's currently [" + tv.is_on() + "].")
 
         # TODO: Your second code goes here.
+        tv.turn_on()
+        tv.set_channel(95)
+        tv.volume_down()
+        tv.volume_down()
 
         print(
             "Now let's watch the last season of Game of Thrones. The TV is currently [" + tv.is_on()
@@ -31,3 +48,6 @@ class TVParty:
             + "Your friend Gabriel also would like to have the volume set to [5], and we're currently on volume ["
             + str(tv.volume_level) + "]."
         )
+
+
+TVParty()
